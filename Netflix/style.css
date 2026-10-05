@@ -13,12 +13,14 @@ body{
 #parent{
     background-color: transparent;
     display: flex;
-    padding: 0 2rem;
     justify-content: space-between;
-    padding-top: 2rem;
+    padding: 0 9.25rem;
+    height: 5rem;
+    align-items: center;
 }
 #parent .left #logo{
-    height: 2rem;
+    height: 2.5rem;
+    width: auto;
 }
 #parent .right{
     display: flex;
@@ -39,7 +41,7 @@ body{
     background-color: #e50914;
     width: 5rem;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 5px;
     align-content: center;
     color: white;
@@ -51,29 +53,41 @@ body{
     display: flex;
     flex-direction: column;
     padding: 1.5rem 2rem 2rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .container1 .content {
     color: white;
-    margin: 2rem 2rem 2rem 2rem;
+    margin: 0.5rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 0 3rem 3rem;
 }
 .container1 .content .child1{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
 }
 .container1 .content .child1 .heading1 {
-    font-size: 52px;
+    font-size: 58px;
     margin: 10px;
+    width: 31rem;
+    font-weight: 700;
 }
 .container1 .content .child1 .heading2{
-    font-size: 27px;
-    margin: 15px;
+    font-size: 1.25rem;
+    margin: 10px;
+    width: 31rem;
+    font-weight: 500;
 }
-.container1 .content .child2{
+.container1 .content .child2 h3{
     text-align: center;
-    font-size: 23px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
 }
 .container1 .content .child3{
     display: flex;
@@ -87,7 +101,7 @@ body{
     width: 25rem;
     border-radius: 10px;
     border: 1px solid rgb(205 199 199 / 50%);
-    background-color: rgba(8, 8, 8, 0.562);
+    background-color: rgba(34, 34, 34, 0.562);
     padding-left: 10px;
     font-size: x-large;
 }
@@ -331,7 +345,7 @@ footer a{
 .container3 .links{
     display: flex;
     height: 10rem;
-    width: 54rem;
+    width: 48rem;
     justify-content: space-between;
     margin: 0 0 3rem;
 }
@@ -378,4 +392,163 @@ footer a{
 }
 .container3 .bottom span{
     font-size: smaller;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+/* ---------- 1024px aur usse chhoti screen ---------- */
+@media (max-width: 1024px) {
+
+    /* hero: content ke aas-paas ki extra jagah kam */
+    .container1 .content {
+        margin: 2rem 0;
+        padding: 1rem;
+    }
+
+    /* sections ki side padding 148px se kam */
+    .container2 {
+        padding: 2rem 3rem 0;
+    }
+
+    /* "More Reason to join": 4 cards ab swipe hone wali ek row */
+    .container2 .box2 .cards {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .container2 .box2 .cards::-webkit-scrollbar {
+        display: none;
+    }
+    .container2 .box2 .cards div {
+        flex-shrink: 0;
+    }
+
+    /* footer */
+    .container3 {
+        padding: 40px 3rem 50px;
+    }
+    .container3 .links {
+        width: 100%;
+    }
+}
+
+
+
+
+/* ---------- 768px aur usse chhoti screen ---------- */
+@media (max-width: 768px) {
+
+    /* nav */
+    #parent {
+        padding: 1rem 1rem 0;
+    }
+    #parent .left #logo {
+        height: 1.5rem;
+    }
+    #select {
+        width: 5.5rem;
+    }
+
+    /* hero */
+    .container1 {
+        height: auto;
+        min-height: 80vh;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .container1 .content {
+        margin: 0;
+        padding: 1rem 0;
+    }
+    .container1 .content .child1 .heading1 {
+        font-size: 2rem;
+    }
+    .container1 .content .child1 .heading2 {
+        font-size: 1.1rem;
+    }
+    .container1 .content .child2 h4 {
+        font-size: 1rem;
+    }
+
+    /* hero ka email form: input upar, button neeche */
+    .container1 .content .child3 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container1 .content .child3 form {
+        width: 100%;
+    }
+    .container1 .content .child3 #form {
+        width: 100%;
+    }
+
+    /* sections */
+    .container2 {
+        padding: 2rem 1rem 0;
+    }
+
+    /* Trending Now: chhote posters, chhote numbers, arrow hidden */
+    .container2 .box1 .list {
+        gap: 2.2rem;
+        padding-left: 1.5rem;
+    }
+    .container2 .box1 .list div {
+        width: 8rem;
+        height: 11.2rem;
+    }
+    .num {
+        font-size: 5rem;
+        left: -0.9rem;
+        -webkit-text-stroke: 2px #d0d0d0;
+    }
+    .arrow {
+        display: none;
+    }
+
+    /* FAQ ke text chhote */
+    .container2 .box3 .accordion-button {
+        font-size: 1.1rem !important;
+    }
+    .container2 .box3 .accordion-body {
+        font-size: 1rem !important;
+    }
+
+    /* box4 (neeche wala email form) */
+    .container2 .box4 {
+        padding: 2.5rem 0;
+    }
+    .container2 .box4 p {
+        text-align: center;
+    }
+    .container2 .box4 .forms {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .container2 .box4 .forms form {
+        width: 100%;
+    }
+    .container2 .box4 .form {
+        width: 100%;
+    }
+
+    /* footer: 2 columns */
+    .container3 {
+        padding: 40px 1rem 50px;
+    }
+    .container3 .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        height: auto;
+    }
+    .container3 .links .group1,
+    .container3 .links .group2,
+    .container3 .links .group3,
+    .container3 .links .group4 {
+        width: auto;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
 }
